@@ -124,17 +124,19 @@ function tubarao(){
     ctx.fill();
 }
 
+//======================================================================
+
 var espacoCano = 250;
 var posicaoCano = [];
-var velocidadeCano = 1;
+var veloCano = 1;
 
 for (var i = 0; i < 7; i++) {
     posicaoCano[i] = 500 + espacoCano * i;
 }
 
 var movimentoPerso = 410;
-var veloPerso = 5;
-var gravidade = 0.5;
+var veloPerso = 8;
+var veloAfundar = 0.5;
 
 function animar(){
     ctx.clearRect(0,0,1700,800);
@@ -144,21 +146,36 @@ function animar(){
     areia();
     pedras();
 
-    movimentoPerso += gravidade;
+    movimentoPerso += veloAfundar;
     if(movimentoPerso >= 625){
         movimentoPerso = 625;
     }
 
+
+    //Colisão
+
     for (var i = 0; i < 7; i++) {  
-        posicaoCano[i] -= velocidadeCano;
+        posicaoCano[i] -= veloCano;
 
         if(posicaoCano[i] < -60){
             posicaoCano[i] = 1700;
+            veloCano+=0.05;
         }
+    }
 
-        if(posicaoCano[6] < -60){
-            velocidadeCano+=0.1;
+    if(posicaoCano[0] >= 200 && posicaoCano[0] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 330 || posicaoCano[0] <= 300 && posicaoCano[0] >= 200 && movimentoPerso >= 460 && movimentoPerso <= 625){
+        veloCano = 0;
+        if(posicaoCano[0] >= 200 && posicaoCano[0] <= 280){
+            if(movimentoPerso <= 330){
+                movimentoPerso = 330;
+            }
+            if(movimentoPerso >= 460){
+                movimentoPerso = 460;
+            }
         }
+    }
+    else{
+        veloCano = 1;
     }
     
     requestAnimationFrame(animar);
