@@ -1,98 +1,97 @@
-const canvasObstaculo = document.getElementById('canvasObstaculo');
-const ctxObstaculo = canvasObstaculo.getContext('2d');
-
-const canvasPerso = document.getElementById('canvasPersonagem');
-const ctxPerso = canvasPerso.getContext('2d');
-
-const canvasTuba = document.getElementById('canvasTubarao');
-const ctxTuba = canvasTuba.getContext('2d');
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
 
 var espacoCano = 190;
 var posicaoCano = [];
+var velocidadeCano = 1;
 
 for (var i = 0; i < 9; i++) {
     posicaoCano[i] = 500 + espacoCano * i;
 }
 
-var velocidadeCano = 1;
+var movimentoPerso = 410;
+var veloPerso = 5;
+var veloAfundar = 0.5;
 
 function obstaculos(){
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[0],0,10,330);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[0],470,10,330);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[0],0,10,330);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[0],470,10,330);
     
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[1],0,10,150);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[1],300,10,500);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[1],0,10,150);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[1],300,10,500);
 
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[2],0,10,450);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[2],600,10,200);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[2],0,10,450);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[2],600,10,200);
 
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[3],0,10,350);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[3],500,10,300);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[3],0,10,350);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[3],500,10,300);
 
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[4],0,10,450);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[4],600,10,200);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[4],0,10,450);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[4],600,10,200);
 
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[5],0,10,150);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[5],300,10,500);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[5],0,10,150);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[5],300,10,500);
 
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[6],0,10,250);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[6],400,10,400);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[6],0,10,250);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[6],400,10,400);
 
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[7],0,10,550);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[7],700,10,100);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[7],0,10,550);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[7],700,10,100);
 
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[8],0,10,450);
-    ctxObstaculo.fillStyle = '#144f25'
-    ctxObstaculo.fillRect(posicaoCano[8],600,10,200);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[8],0,10,450);
+    ctx.fillStyle = '#144f25'
+    ctx.fillRect(posicaoCano[8],600,10,200);
 }
 
 function personagem(){
-    ctxPerso.fillStyle = '#c79b7f';
-    ctxPerso.fillRect(250+25,413,25,8);
-    ctxPerso.fillRect(250,410,40,13);
-    ctxPerso.fillRect(250,415,-20,8);
-    ctxPerso.fillStyle = '#bf9178';
-    ctxPerso.fillRect(250+25,415,35,5);
-    ctxPerso.fillStyle = '#700d20';
-    ctxPerso.fillRect(250,410,10,13);
+    ctx.fillStyle = '#c79b7f';
+    ctx.fillRect(250+25,movimentoPerso+3,25,8);
+    ctx.fillRect(250,movimentoPerso,40,13);
+    ctx.fillRect(250,movimentoPerso+5,-20,8);
+    ctx.fillStyle = '#bf9178';
+    ctx.fillRect(250+25,movimentoPerso+5,35,5);
+    ctx.fillStyle = '#700d20';
+    ctx.fillRect(250,movimentoPerso,10,13);
 }
 
 function tubarao(){
-    ctxTuba.fillStyle = '#c4b664';
-    ctxTuba.fillRect(50,415,69,5);
-    ctxTuba.fillStyle = '#398026';
-    ctxTuba.fillRect(50,400,60,30);
-    ctxTuba.fillRect(50,400,70,16);
-    ctxTuba.fillRect(50,425,70,5);
-    ctxTuba.fillStyle = '#377328';
-    ctxTuba.fillRect(50+25,392,15,10);
-    ctxTuba.fillRect(50+25,410,20,10);
-    ctxTuba.fillRect(50,408,-20,15);
-    ctxTuba.arc(50+65,405,2,0,Math.PI*2,true);
-    ctxTuba.fillStyle = '#ff0000';
-    ctxTuba.fill();
+    ctx.fillStyle = '#c4b664';
+    ctx.fillRect(50,movimentoPerso+5,69,5);
+    ctx.fillStyle = '#398026';
+    ctx.fillRect(50,movimentoPerso-10,60,30);
+    ctx.fillRect(50,movimentoPerso-10,70,16);
+    ctx.fillRect(50,movimentoPerso+15,70,5);
+    ctx.fillStyle = '#377328';
+    ctx.fillRect(50+25,movimentoPerso-18,15,10);
+    ctx.fillRect(50+25,movimentoPerso,20,10);
+    ctx.fillRect(50,movimentoPerso-2,-20,15);
+    ctx.arc(50+65,movimentoPerso-5,2,0,Math.PI*2,true);
+    ctx.fillStyle = '#ff0000';
+    ctx.fill();
 }
 
 function animar(){
-    ctxObstaculo.clearRect(0,0,1700,800);
+    ctx.clearRect(0,0,1700,800);
     obstaculos();
+    personagem();
+    tubarao();
 
     for (var i = 0; i < 9; i++) {  
         posicaoCano[i] -= velocidadeCano;

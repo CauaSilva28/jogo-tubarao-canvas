@@ -3,7 +3,7 @@
     padding:0px;
 }
 
-#myCanvas{
+#canvasCenario{
     background: rgb(0,137,179);
     background: linear-gradient(0deg, rgba(0,137,179,1) 22%, rgba(0,163,223,1) 53%, rgba(79,198,255,1) 76%, rgba(161,224,255,1) 93%);
 }
