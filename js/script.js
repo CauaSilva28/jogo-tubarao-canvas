@@ -110,16 +110,16 @@ function personagem(){
 
 function tubarao(){
     ctx.fillStyle = '#c4b664';
-    ctx.fillRect(50,movimentoPerso+5,69,5);
+    ctx.fillRect(movimentoTuba,movimentoPerso+5,69,5);
     ctx.fillStyle = '#398026';
-    ctx.fillRect(50,movimentoPerso-10,60,30);
-    ctx.fillRect(50,movimentoPerso-10,70,16);
-    ctx.fillRect(50,movimentoPerso+15,70,5);
+    ctx.fillRect(movimentoTuba,movimentoPerso-10,60,30);
+    ctx.fillRect(movimentoTuba,movimentoPerso-10,70,16);
+    ctx.fillRect(movimentoTuba,movimentoPerso+15,70,5);
     ctx.fillStyle = '#377328';
-    ctx.fillRect(50+25,movimentoPerso-18,15,10);
-    ctx.fillRect(50+25,movimentoPerso,20,10);
-    ctx.fillRect(50,movimentoPerso-2,-20,15);
-    ctx.arc(50+65,movimentoPerso-5,2,0,Math.PI*2,true);
+    ctx.fillRect(movimentoTuba+25,movimentoPerso-18,15,10);
+    ctx.fillRect(movimentoTuba+25,movimentoPerso,20,10);
+    ctx.fillRect(movimentoTuba,movimentoPerso-2,-20,15);
+    ctx.arc(movimentoTuba+65,movimentoPerso-5,2,0,Math.PI*2,true);
     ctx.fillStyle = '#ff0000';
     ctx.fill();
 }
@@ -138,6 +138,9 @@ var movimentoPerso = 410;
 var veloPerso = 8;
 var veloAfundar = 0.5;
 
+var movimentoTuba = 50;
+var veloTuba = 1;
+
 function animar(){
     ctx.clearRect(0,0,1700,800);
     obstaculos();
@@ -146,13 +149,14 @@ function animar(){
     areia();
     pedras();
 
+    //Personagem afundando
+    
     movimentoPerso += veloAfundar;
     if(movimentoPerso >= 625){
         movimentoPerso = 625;
     }
 
-
-    //Colisão
+    //Movimenta obstaculos
 
     for (var i = 0; i < 7; i++) {  
         posicaoCano[i] -= veloCano;
@@ -162,6 +166,8 @@ function animar(){
             veloCano+=0.05;
         }
     }
+
+    //Colisão
 
     if(posicaoCano[0] >= 200 && posicaoCano[0] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 330 || posicaoCano[0] <= 300 && posicaoCano[0] >= 200 && movimentoPerso >= 460 && movimentoPerso <= 625){
         veloCano = 0;
@@ -174,12 +180,94 @@ function animar(){
             }
         }
     }
+
+    else if(posicaoCano[1] >= 200 && posicaoCano[1] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 150 || posicaoCano[1] <= 300 && posicaoCano[1] >= 200 && movimentoPerso >= 290 && movimentoPerso <= 625){
+        veloCano = 0;
+        if(posicaoCano[1] >= 200 && posicaoCano[1] <= 280){
+            if(movimentoPerso <= 150){
+                movimentoPerso = 150;
+            }
+            if(movimentoPerso >= 290){
+                movimentoPerso = 290;
+            }
+        }
+    }
+
+    else if(posicaoCano[2] >= 200 && posicaoCano[2] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 450 || posicaoCano[2] <= 300 && posicaoCano[2] >= 200 && movimentoPerso >= 590 && movimentoPerso <= 625){
+        veloCano = 0;
+        if(posicaoCano[2] >= 200 && posicaoCano[2] <= 280){
+            if(movimentoPerso <= 450){
+                movimentoPerso = 450;
+            }
+            if(movimentoPerso >= 590){
+                movimentoPerso = 590;
+            }
+        }
+    }
+
+    else if(posicaoCano[3] >= 200 && posicaoCano[3] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 350 || posicaoCano[3] <= 300 && posicaoCano[3] >= 200 && movimentoPerso >= 490 && movimentoPerso <= 625){
+        veloCano = 0;
+        if(posicaoCano[3] >= 200 && posicaoCano[3] <= 280){
+            if(movimentoPerso <= 350){
+                movimentoPerso = 350;
+            }
+            if(movimentoPerso >= 490){
+                movimentoPerso = 490;
+            }
+        }
+    }
+
+    else if(posicaoCano[4] >= 200 && posicaoCano[4] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 450 || posicaoCano[4] <= 300 && posicaoCano[4] >= 200 && movimentoPerso >= 590 && movimentoPerso <= 625){
+        veloCano = 0;
+        if(posicaoCano[4] >= 200 && posicaoCano[4] <= 280){
+            if(movimentoPerso <= 450){
+                movimentoPerso = 450;
+            }
+            if(movimentoPerso >= 590){
+                movimentoPerso = 590;
+            }
+        }
+    }
+
+    else if(posicaoCano[5] >= 200 && posicaoCano[5] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 150 || posicaoCano[5] <= 300 && posicaoCano[5] >= 200 && movimentoPerso >= 290 && movimentoPerso <= 625){
+        veloCano = 0;
+        if(posicaoCano[5] >= 200 && posicaoCano[5] <= 280){
+            if(movimentoPerso <= 150){
+                movimentoPerso = 150;
+            }
+            if(movimentoPerso >= 290){
+                movimentoPerso = 290;
+            }
+        }
+    }
+
+    else if(posicaoCano[6] >= 200 && posicaoCano[6] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 250 || posicaoCano[6] <= 300 && posicaoCano[6] >= 200 && movimentoPerso >= 390 && movimentoPerso <= 625){
+        veloCano = 0;
+        if(posicaoCano[6] >= 200 && posicaoCano[6] <= 280){
+            if(movimentoPerso <= 250){
+                movimentoPerso = 250;
+            }
+            if(movimentoPerso >= 390){
+                movimentoPerso = 390;
+            }
+        }
+    }
+
     else{
         veloCano = 1;
+    }
+
+    //Movimento tubarão
+
+    if(veloCano == 0){
+        movimentoTuba += veloTuba;
     }
     
     requestAnimationFrame(animar);
 }
+
+
+//Movimento personagem para cima e para baixo
 
 document.addEventListener('keydown', function(event){
     personagem();
