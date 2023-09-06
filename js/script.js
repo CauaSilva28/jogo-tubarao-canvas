@@ -129,6 +129,7 @@ function tubarao(){
 var espacoCano = 250;
 var posicaoCano = [];
 var veloCano = 1;
+var veloCano2 = 1;
 
 for (var i = 0; i < 7; i++) {
     posicaoCano[i] = 500 + espacoCano * i;
@@ -139,7 +140,7 @@ var veloPerso = 8;
 var veloAfundar = 0.5;
 
 var movimentoTuba = 50;
-var veloTuba = 1;
+var veloTuba = 1.5;
 
 function animar(){
     ctx.clearRect(0,0,1700,800);
@@ -163,7 +164,7 @@ function animar(){
 
         if(posicaoCano[i] < -60){
             posicaoCano[i] = 1700;
-            veloCano+=0.05;
+            veloCano2+=0.05;
         }
     }
 
@@ -254,7 +255,7 @@ function animar(){
     }
 
     else{
-        veloCano = 1;
+        veloCano = veloCano2;
     }
 
     //Movimento tubarão
