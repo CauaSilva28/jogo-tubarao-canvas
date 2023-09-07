@@ -27,7 +27,7 @@ var tamanhoBarra = 10;
 
 function atualizarContadores(){
     tempo++;
-    tamanhoBarra++;
+    tamanhoBarra+=2;
 }
 
 function animar(){
@@ -53,17 +53,17 @@ function animar(){
 
         if(posicaoCano[i] < -60){
             posicaoCano[i] = 1700;
-            veloCano2+=0.05;
+            veloCano2+=0.03;
         }
     }
 
     //Aumentando velocidade do personagem quando os obstaculos ficarem mais rápidos
 
     if(veloCano2 >= 2.5){
-        veloPerso = 12;
+        veloPerso = 15;
     }
     else if(veloCano2 >= 4){
-        veloPerso = 15;
+        veloPerso = 18;
     }
 
     //Colisão
@@ -160,6 +160,7 @@ function animar(){
 
     if(veloCano == 0){
         movimentoTuba += veloTuba;
+        // Derrota
         if(movimentoTuba >= 250){
             audioFundo.pause();
             audioFundo.load();
@@ -175,14 +176,16 @@ function animar(){
         }
     }
 
-    //Adicionando frases na tela
+    // Adicionando frases na tela
 
     const fraseTempo = `Tempo: ${tempo}`;
     ctx.font = '30px verdana black';
     ctx.fillStyle = '#000';
     ctx.fillText(fraseTempo, 50,50);
 
-    if(tamanhoBarra >= 1200){
+    // Vitória
+
+    if(tamanhoBarra >= 470){
         audioFundo.pause();
         audioFundo.load();
         ctx.font = '50px arial black';
@@ -222,7 +225,7 @@ function Reiniciar(){
 }
 
 function Iniciar(){
-    var intervalo = setInterval(atualizarContadores, 1000);
+    intervalo = setInterval(atualizarContadores, 1000);
     audioFundo.play();
     audioFundo.volume = 0.05;
     const btniniciar = document.getElementById("botaoIniciar").remove();
@@ -234,7 +237,7 @@ function Iniciar(){
                 movimentoPerso -= veloPerso
             }
 
-            else if(event.key === 's'){
+            if(event.key === 's'){
                 movimentoPerso += veloPerso
             }
 

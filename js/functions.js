@@ -132,6 +132,10 @@ function tubarao(){
 
 function barraPercurso(){
     ctx.beginPath();
+    ctx.fillStyle = '#000';
+    ctx.fillRect(630,50,470, 25);
+
+    ctx.beginPath();
     ctx.fillStyle = '#ffc400';
-    ctx.fillRect(500,750,tamanhoBarra, 25);
+    ctx.fillRect(630,50,tamanhoBarra, 25);
 }
