@@ -30,9 +30,6 @@ function atualizarContadores(){
     tamanhoBarra++;
 }
 
-var intervalo = setInterval(atualizarContadores, 1000);
-
-
 function animar(){
     ctx.clearRect(0,0,1700,800);
     obstaculos();
@@ -225,6 +222,7 @@ function Reiniciar(){
 }
 
 function Iniciar(){
+    var intervalo = setInterval(atualizarContadores, 1000);
     audioFundo.play();
     audioFundo.volume = 0.05;
     const btniniciar = document.getElementById("botaoIniciar").remove();
