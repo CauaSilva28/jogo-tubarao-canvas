@@ -273,29 +273,31 @@ function animar(){
     requestAnimationFrame(animar);
 }
 
+function Iniciar(){
+    const btniniciar = document.getElementById("botaoIniciar").remove();
+    //Movimento personagem para cima e para baixo
+        document.addEventListener('keydown', function(event){
+            personagem();
+            if(event.key === 'w'){
+                movimentoPerso -= veloPerso
+            }
 
-//Movimento personagem para cima e para baixo
+            else if(event.key === 's'){
+                movimentoPerso += veloPerso
+            }
 
-document.addEventListener('keydown', function(event){
-    personagem();
-    if(event.key === 'w'){
-        movimentoPerso -= veloPerso
-    }
+            if(movimentoPerso <= 0){
+                movimentoPerso = 0;
+            }
 
-    else if(event.key === 's'){
-        movimentoPerso += veloPerso
-    }
+            if(movimentoPerso >= 625){
+                movimentoPerso = 625;
+            }
+        });
 
-    if(movimentoPerso <= 0){
-        movimentoPerso = 0;
-    }
+    animar();
+}
 
-    if(movimentoPerso >= 625){
-        movimentoPerso = 625;
-    }
-});
-
-animar();
 obstaculos();
 personagem();
 tubarao();
