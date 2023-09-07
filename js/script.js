@@ -1,8 +1,10 @@
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
-const musicaFundo = document.getElementById('musicaFundo');
-const somMorte = document.getElementById('somMorte');
+const audioFundo = document.getElementById('musicaFundo');
+
+const mensagemDerrota = 'Você morreu!';
+const mensagemVitoria = 'Você conseguiu fugir!';
 
 var espacoCano = 250;
 var posicaoCano = [];
@@ -20,6 +22,17 @@ var veloAfundar = 0.5;
 var movimentoTuba = 50;
 var veloTuba = 2;
 
+var tempo = 0;
+var tamanhoBarra = 10;
+
+function atualizarContadores(){
+    tempo++;
+    tamanhoBarra++;
+}
+
+var intervalo = setInterval(atualizarContadores, 1000);
+
+
 function animar(){
     ctx.clearRect(0,0,1700,800);
     obstaculos();
@@ -27,6 +40,7 @@ function animar(){
     tubarao();
     areia();
     pedras();
+    barraPercurso();
 
     //Personagem afundando
     
@@ -37,13 +51,22 @@ function animar(){
 
     //Movimenta obstaculos
 
-    for (var i = 0; i < 7; i++) {  
+    for (i = 0; i < 7; i++) {  
         posicaoCano[i] -= veloCano;
 
         if(posicaoCano[i] < -60){
             posicaoCano[i] = 1700;
             veloCano2+=0.05;
         }
+    }
+
+    //Aumentando velocidade do personagem quando os obstaculos ficarem mais rápidos
+
+    if(veloCano2 >= 2.5){
+        veloPerso = 12;
+    }
+    else if(veloCano2 >= 4){
+        veloPerso = 15;
     }
 
     //Colisão
@@ -141,15 +164,71 @@ function animar(){
     if(veloCano == 0){
         movimentoTuba += veloTuba;
         if(movimentoTuba >= 250){
-            
+            audioFundo.pause();
+            audioFundo.load();
+            ctx.font = '50px arial black';
+            ctx.fillStyle = '#ff0000';
+            ctx.fillText(mensagemDerrota, 680,400);
+            veloPerso = 0;
+            veloAfundar = 0;
+            veloTuba = 0;
+            veloCano = 0;
+            veloCano2 = 0;
+            clearInterval(intervalo);
         }
+    }
+
+    //Adicionando frases na tela
+
+    const fraseTempo = `Tempo: ${tempo}`;
+    ctx.font = '30px verdana black';
+    ctx.fillStyle = '#000';
+    ctx.fillText(fraseTempo, 50,50);
+
+    if(tamanhoBarra >= 1200){
+        audioFundo.pause();
+        audioFundo.load();
+        ctx.font = '50px arial black';
+        ctx.fillStyle = '#2cc944';
+        ctx.fillText(mensagemVitoria, 580,400);
+        veloAfundar = 0;
+        veloTuba = 0;
+        movimentoTuba = -100;
+        clearInterval(intervalo);
     }
     
     requestAnimationFrame(animar);
 }
 
+function Reiniciar(){
+    audioFundo.play();
+    espacoCano = 250;
+    posicaoCano = [];
+    veloCano = 1;
+    veloCano2 = 1;
+
+    for (i = 0; i < 7; i++) {
+        posicaoCano[i] = 500 + espacoCano * i;
+    }
+
+    movimentoPerso = 410;
+    veloPerso = 8;
+    veloAfundar = 0.5;
+
+    movimentoTuba = 50;
+    veloTuba = 2;
+
+    tempo = 0;
+    tamanhoBarra = 10;
+
+    intervalo = setInterval(atualizarContadores, 1000);
+}
+
 function Iniciar(){
+    audioFundo.play();
+    audioFundo.volume = 0.05;
     const btniniciar = document.getElementById("botaoIniciar").remove();
+
     //Movimento personagem para cima e para baixo
         document.addEventListener('keydown', function(event){
             personagem();
@@ -172,6 +251,8 @@ function Iniciar(){
 
     animar();
 }
+
+//Chamando funções
 
 obstaculos();
 personagem();

@@ -58,36 +58,43 @@ function pedras(){
 }
 
 function obstaculos(){
+    ctx.beginPath();
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[0],0,50,330);
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[0],470,50,330);
     
+    ctx.beginPath();
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[1],0,50,150);
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[1],300,50,500);
 
+    ctx.beginPath();
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[2],0,50,450);
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[2],600,50,200);
 
+    ctx.beginPath();
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[3],0,50,350);
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[3],500,50,300);
 
+    ctx.beginPath();
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[4],0,50,450);
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[4],600,50,200);
 
+    ctx.beginPath();
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[5],0,50,150);
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[5],300,50,500);
 
+    ctx.beginPath();
     ctx.fillStyle = '#144f25'
     ctx.fillRect(posicaoCano[6],0,50,250);
     ctx.fillStyle = '#144f25'
@@ -95,6 +102,7 @@ function obstaculos(){
 }
 
 function personagem(){
+    ctx.beginPath();
     ctx.fillStyle = '#c79b7f';
     ctx.fillRect(250+25,movimentoPerso+3,25,8);
     ctx.fillRect(250,movimentoPerso,40,13);
@@ -106,6 +114,7 @@ function personagem(){
 }
 
 function tubarao(){
+    ctx.beginPath();
     ctx.fillStyle = '#c4b664';
     ctx.fillRect(movimentoTuba,movimentoPerso+5,69,5);
     ctx.fillStyle = '#398026';
@@ -119,4 +128,10 @@ function tubarao(){
     ctx.arc(movimentoTuba+65,movimentoPerso-5,2,0,Math.PI*2,true);
     ctx.fillStyle = '#ff0000';
     ctx.fill();
+}
+
+function barraPercurso(){
+    ctx.beginPath();
+    ctx.fillStyle = '#ffc400';
+    ctx.fillRect(500,750,tamanhoBarra, 25);
 }
