@@ -17,13 +17,13 @@ for (var i = 0; i < 7; i++) {
 
 var movimentoPerso = 410;
 var veloPerso = 8;
-var veloAfundar = 0.5;
+var veloAfundar = 1;
 
 var movimentoTuba = 50;
 var veloTuba = 2;
 
 var tempo = 0;
-var tamanhoBarra = 10;
+var tamanhoBarra = 0;
 
 function atualizarContadores(){
     tempo++;
@@ -172,9 +172,7 @@ function animar(){
             veloTuba = 0;
             veloCano = 0;
             veloCano2 = 0;
-            if(!intervalo){
-                clearInterval(intervalo);
-            }
+            clearInterval(intervalo);
         }
     }
 
@@ -193,18 +191,16 @@ function animar(){
         ctx.font = '50px arial black';
         ctx.fillStyle = '#2cc944';
         ctx.fillText(mensagemVitoria, 580,400);
-        veloAfundar = 0;
         veloTuba = 0;
         movimentoTuba = -100;
-        if(!intervalo){
-            clearInterval(intervalo);
-        }
+        clearInterval(intervalo);
     }
     
     requestAnimationFrame(animar);
 }
 
 function Reiniciar(){
+    clearInterval(intervalo);
     audioFundo.pause();
     audioFundo.load();
     audioFundo.play();
@@ -219,17 +215,15 @@ function Reiniciar(){
 
     movimentoPerso = 410;
     veloPerso = 8;
-    veloAfundar = 0.5;
+    veloAfundar = 1;
 
     movimentoTuba = 50;
     veloTuba = 2;
 
     tempo = 0;
-    tamanhoBarra = 10;
+    tamanhoBarra = 0;
 
-    if(!intervalo){
-        intervalo = setInterval(atualizarContadores, 1000);
-    }
+    intervalo = setInterval(atualizarContadores, 1000);
 }
 
 function Iniciar(){
