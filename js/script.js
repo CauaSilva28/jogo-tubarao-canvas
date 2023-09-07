@@ -172,7 +172,9 @@ function animar(){
             veloTuba = 0;
             veloCano = 0;
             veloCano2 = 0;
-            clearInterval(intervalo);
+            if(!intervalo){
+                clearInterval(intervalo);
+            }
         }
     }
 
@@ -194,13 +196,17 @@ function animar(){
         veloAfundar = 0;
         veloTuba = 0;
         movimentoTuba = -100;
-        clearInterval(intervalo);
+        if(!intervalo){
+            clearInterval(intervalo);
+        }
     }
     
     requestAnimationFrame(animar);
 }
 
 function Reiniciar(){
+    audioFundo.pause();
+    audioFundo.load();
     audioFundo.play();
     espacoCano = 250;
     posicaoCano = [];
@@ -221,7 +227,9 @@ function Reiniciar(){
     tempo = 0;
     tamanhoBarra = 10;
 
-    intervalo = setInterval(atualizarContadores, 1000);
+    if(!intervalo){
+        intervalo = setInterval(atualizarContadores, 1000);
+    }
 }
 
 function Iniciar(){
