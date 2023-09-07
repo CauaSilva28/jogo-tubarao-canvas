@@ -126,6 +126,9 @@ function tubarao(){
 
 //======================================================================
 
+const musicaFundo = document.getElementById('musicaFundo');
+const somMorte = document.getElementById('somMorte');
+
 var espacoCano = 250;
 var posicaoCano = [];
 var veloCano = 1;
@@ -140,7 +143,7 @@ var veloPerso = 8;
 var veloAfundar = 0.5;
 
 var movimentoTuba = 50;
-var veloTuba = 1.5;
+var veloTuba = 2;
 
 function animar(){
     ctx.clearRect(0,0,1700,800);
@@ -262,6 +265,9 @@ function animar(){
 
     if(veloCano == 0){
         movimentoTuba += veloTuba;
+        if(movimentoTuba >= 250){
+            
+        }
     }
     
     requestAnimationFrame(animar);
