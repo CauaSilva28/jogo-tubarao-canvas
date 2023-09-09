@@ -62,8 +62,8 @@ function animar(){
     if(veloCano2 >= 2.5){
         veloPerso = 15;
     }
-    else if(veloCano2 >= 4){
-        veloPerso = 18;
+    else if(veloCano2 >= 3.5){
+        veloPerso = 17;
     }
 
     //Colisão
