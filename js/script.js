@@ -60,10 +60,10 @@ function animar(){
     //Aumentando velocidade do personagem quando os obstaculos ficarem mais rápidos
 
     if(veloCano2 >= 2.5){
-        veloPerso = 15;
+        veloPerso = 14;
     }
     else if(veloCano2 >= 3.5){
-        veloPerso = 17;
+        veloPerso = 16;
     }
 
     //Colisão
