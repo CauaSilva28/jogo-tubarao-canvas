@@ -8,15 +8,20 @@ const mensagemVitoria = 'Você conseguiu fugir!';
 
 var espacoCano = 250;
 var posicaoCano = [];
+var canoCeu = [];
+var canoChao = [];
 var veloCano = 1;
 var veloCano2 = 1;
+var espacoYcano = 150;
 
 for (var i = 0; i < 7; i++) {
     posicaoCano[i] = 500 + espacoCano * i;
+    canoCeu[i] = Math.floor(Math.random()*500);
+    canoChao[i] = canoCeu[i] + espacoYcano;
 }
 
 var movimentoPerso = 410;
-var veloPerso = 8;
+var veloPerso = 10;
 var veloAfundar = 1;
 
 var movimentoTuba = 50;
@@ -37,10 +42,11 @@ function animar(){
     tubarao();
     areia();
     pedras();
+    algas();
     barraPercurso();
 
-    //Personagem afundando
-    
+    // Afunda personagem
+
     movimentoPerso += veloAfundar;
     if(movimentoPerso >= 625){
         movimentoPerso = 625;
@@ -48,12 +54,14 @@ function animar(){
 
     //Movimenta obstaculos
 
-    for (i = 0; i < 7; i++) {  
+    for (var i = 0; i < 7; i++) {  
         posicaoCano[i] -= veloCano;
 
         if(posicaoCano[i] < -60){
             posicaoCano[i] = 1700;
             veloCano2+=0.03;
+            canoCeu[i] = Math.floor(Math.random()*500);
+            canoChao[i] = canoCeu[i] + espacoYcano;
         }
     }
 
@@ -68,86 +76,86 @@ function animar(){
 
     //Colisão
 
-    if(posicaoCano[0] >= 200 && posicaoCano[0] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 330 || posicaoCano[0] <= 300 && posicaoCano[0] >= 200 && movimentoPerso >= 460 && movimentoPerso <= 625){
+    if(posicaoCano[0] >= 200 && posicaoCano[0] <= 300 && movimentoPerso >= 0 && movimentoPerso <= canoCeu[0] || posicaoCano[0] <= 300 && posicaoCano[0] >= 200 && movimentoPerso >= canoChao[0]-10 && movimentoPerso <= 800){
         veloCano = 0;
         if(posicaoCano[0] >= 200 && posicaoCano[0] <= 280){
-            if(movimentoPerso <= 330){
-                movimentoPerso = 330;
+            if(movimentoPerso <= canoCeu[0]){
+                movimentoPerso = canoCeu[0];
             }
-            if(movimentoPerso >= 460){
-                movimentoPerso = 460;
+            if(movimentoPerso >= canoChao[0]-10){
+                movimentoPerso = canoChao[0]-10;
             }
         }
     }
 
-    else if(posicaoCano[1] >= 200 && posicaoCano[1] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 150 || posicaoCano[1] <= 300 && posicaoCano[1] >= 200 && movimentoPerso >= 290 && movimentoPerso <= 625){
+    else if(posicaoCano[1] >= 200 && posicaoCano[1] <= 300 && movimentoPerso >= 0 && movimentoPerso <= canoCeu[1] || posicaoCano[1] <= 300 && posicaoCano[1] >= 200 && movimentoPerso >= canoChao[1]-10 && movimentoPerso <= 800){
         veloCano = 0;
         if(posicaoCano[1] >= 200 && posicaoCano[1] <= 280){
-            if(movimentoPerso <= 150){
-                movimentoPerso = 150;
+            if(movimentoPerso <= canoCeu[1]){
+                movimentoPerso = canoCeu[1];
             }
-            if(movimentoPerso >= 290){
-                movimentoPerso = 290;
+            if(movimentoPerso >= canoChao[1]-10){
+                movimentoPerso = canoChao[1]-10;
             }
         }
     }
 
-    else if(posicaoCano[2] >= 200 && posicaoCano[2] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 450 || posicaoCano[2] <= 300 && posicaoCano[2] >= 200 && movimentoPerso >= 590 && movimentoPerso <= 625){
+    else if(posicaoCano[2] >= 200 && posicaoCano[2] <= 300 && movimentoPerso >= 0 && movimentoPerso <= canoCeu[2] || posicaoCano[2] <= 300 && posicaoCano[2] >= 200 && movimentoPerso >= canoChao[2]-10 && movimentoPerso <= 800){
         veloCano = 0;
         if(posicaoCano[2] >= 200 && posicaoCano[2] <= 280){
-            if(movimentoPerso <= 450){
-                movimentoPerso = 450;
+            if(movimentoPerso <= canoCeu[2]){
+                movimentoPerso = canoCeu[2];
             }
-            if(movimentoPerso >= 590){
-                movimentoPerso = 590;
+            if(movimentoPerso >= canoChao[2]-10){
+                movimentoPerso = canoChao[2]-10;
             }
         }
     }
 
-    else if(posicaoCano[3] >= 200 && posicaoCano[3] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 350 || posicaoCano[3] <= 300 && posicaoCano[3] >= 200 && movimentoPerso >= 490 && movimentoPerso <= 625){
+    else if(posicaoCano[3] >= 200 && posicaoCano[3] <= 300 && movimentoPerso >= 0 && movimentoPerso <= canoCeu[3] || posicaoCano[3] <= 300 && posicaoCano[3] >= 200 && movimentoPerso >= canoChao[3]-10 && movimentoPerso <= 800){
         veloCano = 0;
         if(posicaoCano[3] >= 200 && posicaoCano[3] <= 280){
-            if(movimentoPerso <= 350){
-                movimentoPerso = 350;
+            if(movimentoPerso <= canoCeu[3]){
+                movimentoPerso = canoCeu[3];
             }
-            if(movimentoPerso >= 490){
-                movimentoPerso = 490;
+            if(movimentoPerso >= canoChao[3]-10){
+                movimentoPerso = canoChao[3]-10;
             }
         }
     }
 
-    else if(posicaoCano[4] >= 200 && posicaoCano[4] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 450 || posicaoCano[4] <= 300 && posicaoCano[4] >= 200 && movimentoPerso >= 590 && movimentoPerso <= 625){
+    else if(posicaoCano[4] >= 200 && posicaoCano[4] <= 300 && movimentoPerso >= 0 && movimentoPerso <= canoCeu[4] || posicaoCano[4] <= 300 && posicaoCano[4] >= 200 && movimentoPerso >= canoChao[4]-10 && movimentoPerso <= 800){
         veloCano = 0;
         if(posicaoCano[4] >= 200 && posicaoCano[4] <= 280){
-            if(movimentoPerso <= 450){
-                movimentoPerso = 450;
+            if(movimentoPerso <= canoCeu[4]){
+                movimentoPerso = canoCeu[4];
             }
-            if(movimentoPerso >= 590){
-                movimentoPerso = 590;
+            if(movimentoPerso >= canoChao[4]-10){
+                movimentoPerso = canoChao[4]-10;
             }
         }
     }
 
-    else if(posicaoCano[5] >= 200 && posicaoCano[5] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 150 || posicaoCano[5] <= 300 && posicaoCano[5] >= 200 && movimentoPerso >= 290 && movimentoPerso <= 625){
+    else if(posicaoCano[5] >= 200 && posicaoCano[5] <= 300 && movimentoPerso >= 0 && movimentoPerso <= canoCeu[5] || posicaoCano[5] <= 300 && posicaoCano[5] >= 200 && movimentoPerso >= canoChao[5]-10 && movimentoPerso <= 800){
         veloCano = 0;
         if(posicaoCano[5] >= 200 && posicaoCano[5] <= 280){
-            if(movimentoPerso <= 150){
-                movimentoPerso = 150;
+            if(movimentoPerso <= canoCeu[5]){
+                movimentoPerso = canoCeu[5];
             }
-            if(movimentoPerso >= 290){
-                movimentoPerso = 290;
+            if(movimentoPerso >= canoChao[5]-10){
+                movimentoPerso = canoChao[5]-10;
             }
         }
     }
 
-    else if(posicaoCano[6] >= 200 && posicaoCano[6] <= 300 && movimentoPerso >= 0 && movimentoPerso <= 250 || posicaoCano[6] <= 300 && posicaoCano[6] >= 200 && movimentoPerso >= 390 && movimentoPerso <= 625){
+    else if(posicaoCano[6] >= 200 && posicaoCano[6] <= 300 && movimentoPerso >= 0 && movimentoPerso <= canoCeu[6] || posicaoCano[6] <= 300 && posicaoCano[6] >= 200 && movimentoPerso >= canoChao[6]-10 && movimentoPerso <= 800){
         veloCano = 0;
         if(posicaoCano[6] >= 200 && posicaoCano[6] <= 280){
-            if(movimentoPerso <= 250){
-                movimentoPerso = 250;
+            if(movimentoPerso <= canoCeu[6]){
+                movimentoPerso = canoCeu[6];
             }
-            if(movimentoPerso >= 390){
-                movimentoPerso = 390;
+            if(movimentoPerso >= canoChao[6]-10){
+                movimentoPerso = canoChao[6]-10;
             }
         }
     }
@@ -193,6 +201,7 @@ function animar(){
         ctx.fillText(mensagemVitoria, 580,400);
         veloTuba = 0;
         movimentoTuba = -100;
+        veloCano = 1;
         clearInterval(intervalo);
     }
     
@@ -211,10 +220,12 @@ function Reiniciar(){
 
     for (i = 0; i < 7; i++) {
         posicaoCano[i] = 500 + espacoCano * i;
+        canoCeu[i] = Math.floor(Math.random()*400);
+        canoChao[i] = canoCeu[i] + espacoYcano;
     }
 
     movimentoPerso = 410;
-    veloPerso = 8;
+    veloPerso = 10;
     veloAfundar = 1;
 
     movimentoTuba = 50;
@@ -225,6 +236,7 @@ function Reiniciar(){
 
     intervalo = setInterval(atualizarContadores, 1000);
 }
+
 
 function Iniciar(){
     intervalo = setInterval(atualizarContadores, 1000);
@@ -262,3 +274,4 @@ personagem();
 tubarao();
 areia();
 pedras();
+algas();

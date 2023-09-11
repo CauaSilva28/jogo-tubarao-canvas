@@ -57,48 +57,84 @@ function pedras(){
     ctx.fill();
 }
 
+function algas(){
+    ctx.beginPath();
+    ctx.strokeStyle = '#298217';
+    ctx.moveTo(1520,750);
+    ctx.quadraticCurveTo(1470,700,1490,690);
+    ctx.quadraticCurveTo(1500,685,1490,670);
+    ctx.quadraticCurveTo(1470,650,1490,630);
+    ctx.quadraticCurveTo(1520,675,1519,680);
+    ctx.quadraticCurveTo(1520,690,1513,700);
+    ctx.quadraticCurveTo(1510,710,1520,715);
+    ctx.quadraticCurveTo(1550,690,1520,640);
+    ctx.quadraticCurveTo(1510,620,1530,600);
+    ctx.quadraticCurveTo(1550,640,1560,670);
+    ctx.quadraticCurveTo(1560,710,1555,715);
+    ctx.quadraticCurveTo(1560,720,1572,690);
+    ctx.quadraticCurveTo(1585,650,1570,640);
+    ctx.quadraticCurveTo(1545,610,1590,640);
+    ctx.quadraticCurveTo(1605,655,1600,665);
+    ctx.quadraticCurveTo(1590,680,1595,700);
+    ctx.quadraticCurveTo(1600,710,1560,740);
+    ctx.quadraticCurveTo(1540,760,1520,740);
+    ctx.fillStyle = '#288f13';
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.lineWidth = 3;
+    ctx.moveTo(1500,755);
+    ctx.quadraticCurveTo(1510,715,1560,730);
+    ctx.quadraticCurveTo(1620,760,1550,776);
+    ctx.quadraticCurveTo(1500,780,1500,756);
+    ctx.fillStyle = '#4f5561';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(1500,755);
+    ctx.quadraticCurveTo(1510,715,1560,730);
+    ctx.quadraticCurveTo(1560,740,1500,755);
+    ctx.fillStyle = '#5b626e';
+    ctx.fill();
+}
+
 function obstaculos(){
     ctx.beginPath();
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[0],0,50,330);
+    ctx.fillRect(posicaoCano[0],0,50,canoCeu[0]);
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[0],470,50,330);
+    ctx.fillRect(posicaoCano[0],canoChao[0],50,800);
     
-    ctx.beginPath();
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[1],0,50,150);
+    ctx.fillRect(posicaoCano[1],0,50,canoCeu[1]);
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[1],300,50,500);
+    ctx.fillRect(posicaoCano[1],canoChao[1],50,800);
 
-    ctx.beginPath();
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[2],0,50,450);
+    ctx.fillRect(posicaoCano[2],0,50,canoCeu[2]);
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[2],600,50,200);
+    ctx.fillRect(posicaoCano[2],canoChao[2],50,800);
 
-    ctx.beginPath();
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[3],0,50,350);
+    ctx.fillRect(posicaoCano[3],0,50,canoCeu[3]);
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[3],500,50,300);
+    ctx.fillRect(posicaoCano[3],canoChao[3],50,800);
 
-    ctx.beginPath();
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[4],0,50,450);
+    ctx.fillRect(posicaoCano[4],0,50,canoCeu[4]);
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[4],600,50,200);
+    ctx.fillRect(posicaoCano[4],canoChao[4],50,800);
 
-    ctx.beginPath();
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[5],0,50,150);
+    ctx.fillRect(posicaoCano[5],0,50,canoCeu[5]);
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[5],300,50,500);
+    ctx.fillRect(posicaoCano[5],canoChao[5],50,800);
 
-    ctx.beginPath();
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[6],0,50,250);
+    ctx.fillRect(posicaoCano[6],0,50,canoCeu[6]);
     ctx.fillStyle = '#144f25'
-    ctx.fillRect(posicaoCano[6],400,50,400);
+    ctx.fillRect(posicaoCano[6],canoChao[6],50,800);
 }
 
 function personagem(){
