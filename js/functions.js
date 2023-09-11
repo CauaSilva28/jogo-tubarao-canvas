@@ -59,8 +59,8 @@ function pedras(){
 
 function algas(){
     ctx.beginPath();
-    ctx.strokeStyle = '#298217';
-    ctx.moveTo(1520,750);
+    ctx.strokeStyle = '#721f91';
+    ctx.moveTo(1520,740);
     ctx.quadraticCurveTo(1470,700,1490,690);
     ctx.quadraticCurveTo(1500,685,1490,670);
     ctx.quadraticCurveTo(1470,650,1490,630);
@@ -78,7 +78,7 @@ function algas(){
     ctx.quadraticCurveTo(1590,680,1595,700);
     ctx.quadraticCurveTo(1600,710,1560,740);
     ctx.quadraticCurveTo(1540,760,1520,740);
-    ctx.fillStyle = '#288f13';
+    ctx.fillStyle = '#9122ba';
     ctx.fill();
     ctx.stroke();
 

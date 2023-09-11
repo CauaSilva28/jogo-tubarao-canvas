@@ -32,7 +32,7 @@ var tamanhoBarra = 0;
 
 function atualizarContadores(){
     tempo++;
-    tamanhoBarra+=2;
+    tamanhoBarra+=2.5;
 }
 
 function animar(){
@@ -201,7 +201,6 @@ function animar(){
         ctx.fillText(mensagemVitoria, 580,400);
         veloTuba = 0;
         movimentoTuba = -100;
-        veloCano = 1;
         clearInterval(intervalo);
     }
     
