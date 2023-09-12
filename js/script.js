@@ -246,11 +246,11 @@ function Iniciar(){
     //Movimento personagem para cima e para baixo
         document.addEventListener('keydown', function(event){
             personagem();
-            if(event.key === 'w'){
+            if(event.key === 'w' || event.key === 'W'){
                 movimentoPerso -= veloPerso
             }
 
-            if(event.key === 's'){
+            if(event.key === 's' || event.key === 'S'){
                 movimentoPerso += veloPerso
             }
 
