@@ -34,7 +34,7 @@
 
 <p>Por fim as barras, que foram feitas com retângulos um por cima do outro, onde o de baixo é preto para mostrar que está vazia. As variáveis tamanhoBarra e tamanhoBarraVida serão explicadas.</p>
 
-## JAVASCRIPT SCRIPT
+## JAVASCRIPT SCRIPTS
 <p>Tudo que for explicado aqui irá ser mostrado na gameplay no final do README.</p>
 
 <img src='img/inicio.jpg' />
@@ -53,11 +53,13 @@
 
 <p>As variáveis posicaoCano, canoCeu e canoChao estão como [] pois são um array vazio, que logo em seguida terá uma estrutura de repetição for com a variável i sendo igual a 0 e menor que 7(refere-se ao número de canos, que é 6) onde irá atribuir valores a esses array. Esse código foi utilizado para que não precisasse criar uma variavel para cada cano, assim deixando o código mais limpo e simples.</p>
 
-<p>A posicaoCano é igual ao seu ponto incial(500) mais o espaçamento do cano no eixo X multiplicado pelo número do cano(quanto maior, maior a distância do ponto inicial)</p>
+<p>A posicaoCano é igual ao seu ponto incial(500) mais o espaçamento do cano no eixo X multiplicado pelo número do cano(quanto maior, maior a distância do ponto inicial), essa variável foi colocada no lugar da posição "X" do retângulo no obstáculo.</p>
 
-<p> O canoCeu é um valor aleatório de 0 a 500, e o canoChao é esse valor aleatório + o espaçamento do cano no eixoY.</p>
+<p>O canoCeu é um valor aleatório de 0 a 500, essa variável foi colocada no lugar da "altura" do retângulo no obstáculo. Já o canoChao é esse valor aleatório + o espaçamento do cano no eixoY, essa variável foi colocada na posição "Y" do retângulo no obstáculo.</p>
 
-<p>Por fim as variaveis de movimento do personagem (movimentoPerso, veloPerso e veloAfundar), do tubarão(movimentoTuba, veloTuba), tempo, tamanho da barra de percuso e o tamanho da barra de vida</p>
+<p>As variaveis "movimentoPerso", "veloPerso", "veloAfundar", "movimentoTuba" e "veloTuba" são de movimento do personagem e do tubarão. A variável movimentoPerso foi colocada no lugar da posição "Y" do retângulo no personagem e no tubarão. A variável movimentoTuba foi colocada no lugar da posição "X" do retângulo no tubarão. As variáveis de velocidade são apenas para adicionar nas variáveis de movimento.</p>
+
+<p>Por fim as variaveis de tempo, tamanho da barra de percuso e o tamanho da barra de vida.</p>
 
 ### Contadores
 <img src='img/contadores.jpg' />
@@ -72,7 +74,7 @@
 ### Afundar personagem
 <img src='img/afundar.jpg' />
 
-<p>Esse código fará com que o personagem fique sempre indo para baixo/afundando. O if é para que se o personagem afundar totalmente, ele fica parado.<p>
+<p>Esse código fará com que o personagem fique sempre indo para baixo/afundando. O if é para que se o personagem afundar totalmente, ele fique parado.<p>
 
 ### Mover obstáculos
 <img src='img/moverobstaculo.jpg' />
@@ -83,3 +85,40 @@
 <img src='img/aumentarveloperso.jpg' />
 
 <p>Para o jogo não se tornar impossível, contendo canos que o personagem não consiga desviar, esse código fará com que a velocidade do personagem aumente quando a velocidade do cano chegar em tal valor.</p>
+
+### Colisão
+<img src='img/colisao.jpg' />
+
+<p>Para fazer a colisão do personagem com o obstáculo, foi preciso utilizar uma lógica com if e else. A lógica foi que se a posição X do cano for igual a posição X do personagem, e o movimentoPerso que é a posição Y do personagem for maior ou igual a 0 e menor ou igual ao tamanho do canoCeu (tamanho total do cano de cima) ou se a posição X do cano for igual a posição X do personagem, e o movimentoPerso for menor ou igual a 800 e maior ou igual a posição do canoChao (tamanho total do cano de baixo), a velocidade do cano será zero, assim dando a impressão de que o personagem parou. dentro desse if possui outro if, que é para o personagem não colidir apenas batendo de frente com o obstáculo, mas também batendo de baixo e de cima, assim não atravessando ele.</p>
+<p>Por fim possui um else para que se não colidiu, o cano continue movimentando.</p>
+
+### Movimento tubarão
+<img src='img/movimentotuba.jpg' />
+
+<p>O movimento do tubarão no eixo X só acontece quando a velocidade do cano for 0, se for o tubarão irá se mover no eixo X se aproximando cada vez mais da posição X do personagem e a barra de vida diminui. Enquanto o personagem tiver na área de colisão do obstáculo, a velocidade vai continuar sendo zero. OBS: A posição do tubarão no eixo Y é a mesma do personagem, para dar a impressão de que ele está perseguindo o personagem.</p>
+<p>Temos também a parte da derrota, se o tubarão alcançar o personagem, a música de fundo irá parar, o tempo e a barra de percurso também vão parar, as velocidades serão 0 e aparecerá a mensagem de derrota na tela, com a cor vermelha e a fonte arial black com 50px.</p>
+<img src='img/derrota.jpg' />
+
+### Parte final da function animar
+<img src='img/partefinalanimar.jpg' />
+
+<p>No final da função animar, temos o código para colocar o tempo na tela.</p>
+<img src='img/tempo.jpg' />
+<p>Temos também o código que irá mostrar a vitória. Se a barra do percurso chegar ao fim, o áudio irá parar, o tubarão irá sumir, o tempo irá parar e irá aparecer a mensagem de vitória na tela.</p>
+<img src='img/vitoria.jpg' />
+<p>Por fim colocamos um "requestAnimationFrame(animar)" que é o responsável por animar tudo no nosso jogo.</p>
+
+### Function reiniciar
+<img src='img/reiniciar.jpg' />
+
+<p>A function reiniciar irá retornar todas as variáveis aos seus valores iniciais após clicar no botão reiniciar</p>
+
+### Function iniciar
+<img src='img/iniciar.jpg' />
+
+<p>Ao clicar no botão de iniciar, a function animar() será chamada, assim começando o jogo. Além da function animar(), também temos que os movimento do personagem a partir das teclas W para cima e S para baixo irão começar a funcionar, o botão iniciar será removido, a música de fundo irá começar a tocar e o tempo e a barra de percurso irão começar a aumentar.</p>
+
+### Chamando funções
+<img src='img/chamandofuncoes.jpg' />
+
+<p>Por fim, chamamos todas as funções dos elementos que queremos que apareça antes de iniciar o jogo.</p>
