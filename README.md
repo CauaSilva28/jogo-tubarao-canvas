@@ -64,7 +64,7 @@
 ### Contadores
 <img src='img/contadores.jpg' />
 
-<p>A function contadores é responsável por aumentar +1 no tempo e +2.5 no tamanho da barra do percurso a cada segundo.</p> 
+<p>A function contadores é responsável por aumentar +1 no tempo e +2.5 no tamanho da barra do percurso a cada segundo. Mas para que isso sejá possível, foi preciso colocar o código "intervalo = setInterval(atualizarContadores, 1000)" na hora de iniciar o jogo.</p> 
 
 ### Inicio function animar
 <img src='img/inicioanimar.jpg' />
@@ -89,14 +89,14 @@
 ### Colisão
 <img src='img/colisao.jpg' />
 
-<p>Para fazer a colisão do personagem com o obstáculo, foi preciso utilizar uma lógica com if e else. A lógica foi que se a posição X do cano for igual a posição X do personagem, e o movimentoPerso que é a posição Y do personagem for maior ou igual a 0 e menor ou igual ao tamanho do canoCeu (tamanho total do cano de cima) ou se a posição X do cano for igual a posição X do personagem, e o movimentoPerso for menor ou igual a 800 e maior ou igual a posição do canoChao (tamanho total do cano de baixo), a velocidade do cano será zero, assim dando a impressão de que o personagem parou. dentro desse if possui outro if, que é para o personagem não colidir apenas batendo de frente com o obstáculo, mas também batendo de baixo e de cima, assim não atravessando ele.</p>
+<p>Para fazer a colisão do personagem com o obstáculo, foi preciso utilizar uma lógica com if e else. A lógica foi que se a posição X do cano for igual a posição X do personagem, e o movimentoPerso que é a posição Y do personagem for maior ou igual a 0 e menor ou igual ao tamanho do canoCeu (tamanho total do cano de cima) ou se a posição X do cano for igual a posição X do personagem, e o movimentoPerso for menor ou igual a 800 e maior ou igual a posição do canoChao (tamanho total do cano de baixo), a velocidade do cano será zero, assim dando a impressão de que o personagem parou. dentro desse if possui outro if, que é para o personagem não colidir apenas batendo de frente com o obstáculo, mas também batendo de baixo e de cima, assim não atravessando ele. Esse código de colisão é de apenas um obstáculo, essa lógica foi utilizada nos 6.</p>
 <p>Por fim possui um else para que se não colidiu, o cano continue movimentando.</p>
 
 ### Movimento tubarão
 <img src='img/movimentotuba.jpg' />
 
-<p>O movimento do tubarão no eixo X só acontece quando a velocidade do cano for 0, se for o tubarão irá se mover no eixo X se aproximando cada vez mais da posição X do personagem e a barra de vida diminui. Enquanto o personagem tiver na área de colisão do obstáculo, a velocidade vai continuar sendo zero. OBS: A posição do tubarão no eixo Y é a mesma do personagem, para dar a impressão de que ele está perseguindo o personagem.</p>
-<p>Temos também a parte da derrota, se o tubarão alcançar o personagem, a música de fundo irá parar, o tempo e a barra de percurso também vão parar, as velocidades serão 0 e aparecerá a mensagem de derrota na tela, com a cor vermelha e a fonte arial black com 50px.</p>
+<p>O movimento do tubarão no eixo X só acontece quando a velocidade do cano for 0, se for, o tubarão irá se mover no eixo X se aproximando cada vez mais da posição X do personagem e a barra de vida diminui. Enquanto o personagem tiver na área de colisão do obstáculo, a velocidade vai continuar sendo zero. OBS: A posição do tubarão no eixo Y é a mesma do personagem, para dar a impressão de que ele está perseguindo o personagem.</p>
+<p>Temos também a parte da derrota, se o tubarão alcançar o personagem (As posições X dos dois ser igual), a música de fundo irá parar, o tempo e a barra de percurso também vão parar, a barra de vida ficará vazia, as velocidades serão 0 e aparecerá a mensagem de derrota na tela, com a cor vermelha e a fonte arial black com 50px.</p>
 <img src='img/derrota.jpg' />
 
 ### Parte final da function animar
@@ -111,7 +111,7 @@
 ### Function reiniciar
 <img src='img/reiniciar.jpg' />
 
-<p>A function reiniciar irá retornar todas as variáveis aos seus valores iniciais após clicar no botão reiniciar</p>
+<p>A function reiniciar irá retornar todas as variáveis aos seus valores iniciais após clicar no botão reiniciar.</p>
 
 ### Function iniciar
 <img src='img/iniciar.jpg' />
@@ -122,3 +122,8 @@
 <img src='img/chamandofuncoes.jpg' />
 
 <p>Por fim, chamamos todas as funções dos elementos que queremos que apareça antes de iniciar o jogo.</p>
+
+## Vídeos mostrando o jogo
+### Mostrando derrota
+
+### Mostrando vitória
