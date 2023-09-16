@@ -29,6 +29,7 @@ var veloTuba = 2;
 
 var tempo = 0;
 var tamanhoBarra = 0;
+var tamanhoBarraVida = 300;
 
 function atualizarContadores(){
     tempo++;
@@ -44,6 +45,7 @@ function animar(){
     pedras();
     algas();
     barraPercurso();
+    barraVida();
 
     // Afunda personagem
 
@@ -168,6 +170,10 @@ function animar(){
 
     if(veloCano == 0){
         movimentoTuba += veloTuba;
+        tamanhoBarraVida -= 3;
+        if(tamanhoBarraVida<=0){
+            tamanhoBarraVida = 0;
+        }
         // Derrota
         if(movimentoTuba >= 250){
             audioFundo.pause();
@@ -232,6 +238,7 @@ function Reiniciar(){
 
     tempo = 0;
     tamanhoBarra = 0;
+    tamanhoBarraVida = 300;
 
     intervalo = setInterval(atualizarContadores, 1000);
 }
