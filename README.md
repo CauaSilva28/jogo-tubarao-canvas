@@ -4,8 +4,7 @@
 
 <p>O jogador(personagem) deve completar o jogo desviando de obstáculos que vão surgindo na tela. Se ele colidir com algum obstáculo, ele irá ficar parado e o tubarão chegará cada vez mais próximo, se  o tubarão chegar no personagem, derrota, mas se o jogador conseguir fugir, vitória.</p>
 
-## Controles
-<img src='img/comando.png' />
+<img src='img/comando.png' width='500px' height='500px' />
 
 ## HTML
 <img src='img/html.jpg' />
