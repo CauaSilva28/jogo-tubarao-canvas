@@ -248,7 +248,7 @@ function Iniciar(){
     intervalo = setInterval(atualizarContadores, 1000);
     audioFundo.play();
     audioFundo.volume = 0.05;
-    const btniniciar = document.getElementById("botaoIniciar").remove();
+    const btniniciar = document.getElementById('botaoIniciar').remove();
 
     //Movimento personagem para cima e para baixo
         document.addEventListener('keydown', function(event){
