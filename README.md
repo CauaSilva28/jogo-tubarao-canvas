@@ -22,7 +22,7 @@
 ### Obstáculos
 <img src='img/obstaculos.jpg' />
 
-<p>Foram cirados 6 obstáculos, todos verdes e feitos com um retângulo. Os nomes das variáveis posicaoCano, canoChao e canoCeu serão explicadas.</p>
+<p>Foram criados 6 obstáculos, todos verdes e feitos com um retângulo. Os nomes das variáveis posicaoCano, canoChao e canoCeu serão explicadas.</p>
 
 ### Personagem e tubarão
 <img src='img/personagens.jpg' />
@@ -55,7 +55,7 @@
 
 <p>A posicaoCano é igual ao seu ponto incial(500) mais o espaçamento do cano no eixo X multiplicado pelo número do cano(quanto maior, maior a distância do ponto inicial), essa variável foi colocada no lugar da posição "X" do retângulo no obstáculo.</p>
 
-<p>O canoCeu é um valor aleatório de 0 a 500, essa variável foi colocada no lugar da "altura" do retângulo no obstáculo. Já o canoChao é esse valor aleatório + o espaçamento do cano no eixoY, essa variável foi colocada na posição "Y" do retângulo no obstáculo.</p>
+<p>O canoCeu é um valor aleatório de 0 a 500, essa variável foi colocada no lugar da "altura" do retângulo no obstáculo. Já o canoChao é esse valor aleatório + o espaçamento do cano no eixo Y, essa variável foi colocada na posição "Y" do retângulo no obstáculo.</p>
 
 <p>As variaveis "movimentoPerso", "veloPerso", "veloAfundar", "movimentoTuba" e "veloTuba" são de movimento do personagem e do tubarão. A variável movimentoPerso foi colocada no lugar da posição "Y" do retângulo no personagem e no tubarão. A variável movimentoTuba foi colocada no lugar da posição "X" do retângulo no tubarão. As variáveis de velocidade são apenas para adicionar nas variáveis de movimento.</p>
 
