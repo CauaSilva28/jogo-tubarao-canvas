@@ -33,7 +33,7 @@ var tamanhoBarraVida = 300;
 
 function atualizarContadores(){
     tempo++;
-    tamanhoBarra+=2.5;
+    tamanhoBarra+=3;
 }
 
 function animar(){
