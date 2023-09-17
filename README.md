@@ -128,5 +128,8 @@
 
 ## Vídeos mostrando o jogo
 ### Mostrando derrota
+https://github.com/CauaSilva28/jogo-tubarao-canvas/assets/127631052/1366abec-5b82-4d70-b94b-7069e891fcfe
 
 ### Mostrando vitória
+https://github.com/CauaSilva28/jogo-tubarao-canvas/assets/127631052/56c52743-d8b8-459a-8e14-942bb2d8de8e
+
