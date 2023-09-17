@@ -1,7 +1,11 @@
 # Explicação do Jogo canvas
 <p>Feito por Cauã Silva👦 e Juliana👩</p>
+<p>2°Jogos Digitais🕹️</p>
 
 <p>O jogador(personagem) deve completar o jogo desviando de obstáculos que vão surgindo na tela. Se ele colidir com algum obstáculo, ele irá ficar parado e o tubarão chegará cada vez mais próximo, se  o tubarão chegar no personagem, derrota, mas se o jogador conseguir fugir, vitória.</p>
+
+## Controles
+<img src='img/comando.png' />
 
 ## HTML
 <img src='img/html.jpg' />
