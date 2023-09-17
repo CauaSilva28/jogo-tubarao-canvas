@@ -64,7 +64,7 @@
 ### Contadores
 <img src='img/contadores.jpg' />
 
-<p>A function contadores é responsável por aumentar +1 no tempo e +2.5 no tamanho da barra do percurso a cada segundo. Mas para que isso sejá possível, foi preciso colocar o código "intervalo = setInterval(atualizarContadores, 1000)" na hora de iniciar o jogo.</p> 
+<p>A function contadores é responsável por aumentar +1 no tempo e +3 no tamanho da barra do percurso a cada segundo. Mas para que isso sejá possível, foi preciso colocar o código "intervalo = setInterval(atualizarContadores, 1000)" na hora de iniciar o jogo.</p> 
 
 ### Inicio function animar
 <img src='img/inicioanimar.jpg' />
